@@ -1,0 +1,91 @@
+ARG BASE_VERSION=15
+
+# ---------------------------------------------------------------------------
+# Stage 1: build the React client and resolve server production deps
+# (better-sqlite3 has no FreeBSD prebuilt, so node-gyp compiles it from source)
+# ---------------------------------------------------------------------------
+FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
+
+ARG UPSTREAM_URL="https://api.github.com/repos/mauriceboe/TREK/releases/latest"
+
+# Toolchain for node-gyp to compile better-sqlite3 (no FreeBSD prebuilt);
+# librsvg2-rust (rsvg-convert) rasterizes the PWA icons in place of sharp.
+RUN pkg install -y node24 npm-node24 git-tiny python3 gmake librsvg2-rust \
+        FreeBSD-clang FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-toolchain \
+        FreeBSD-runtime-dev FreeBSD-utilities-dev FreeBSD-libexecinfo-dev && \
+    pkg clean -ay
+
+# Clone the latest release tag and record the version
+RUN TREK_TAG=$(fetch -qo - "${UPSTREAM_URL}" | jq -r .tag_name) && \
+    git clone --depth 1 -b "${TREK_TAG}" https://github.com/mauriceboe/TREK /build && \
+    printf '%s' "${TREK_TAG#v}" > /build/VERSION
+
+# React client -> /build/client/dist.
+# The upstream `prebuild` rasterizes PWA icons with sharp (no FreeBSD build);
+# do it with rsvg-convert instead, then run vite directly to skip `prebuild`.
+RUN cd /build/client && \
+    npm ci && \
+    for spec in apple-touch-icon-180x180.png:180 icon-192x192.png:192 icon-512x512.png:512; do \
+        name=${spec%:*}; size=${spec#*:}; \
+        rsvg-convert -w "$size" -h "$size" public/icons/icon.svg -o "public/icons/$name"; \
+    done && \
+    ./node_modules/.bin/vite build
+
+# Server production deps (builds native better-sqlite3 + fetches esbuild freebsd)
+RUN cd /build/server && npm ci --omit=dev
+
+# ---------------------------------------------------------------------------
+# Stage 2: runtime
+# ---------------------------------------------------------------------------
+FROM ghcr.io/daemonless/base:${BASE_VERSION}
+
+ARG FREEBSD_ARCH=amd64
+ARG PACKAGES="node24"
+ARG UPSTREAM_URL
+
+LABEL org.opencontainers.image.title="Trek" \
+      org.opencontainers.image.description="Self-hosted travel/trip planner with real-time collaboration, interactive maps, PWA support, SSO, budgets, and packing lists." \
+      org.opencontainers.image.source="https://github.com/daemonless/trek" \
+      org.opencontainers.image.url="https://liketrek.com/" \
+      org.opencontainers.image.documentation="https://github.com/mauriceboe/TREK/wiki" \
+      org.opencontainers.image.licenses="AGPL-3.0-only" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="Productivity" \
+      io.daemonless.port="3000" \
+      io.daemonless.volumes="/config" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.upstream-url="${UPSTREAM_URL}" \
+      io.daemonless.upstream-jq=".tag_name | sub(\"^v\"; \"\")" \
+      io.daemonless.healthcheck-url="http://localhost:3000/api/health" \
+      io.daemonless.packages="${PACKAGES}"
+
+RUN pkg install -y ${PACKAGES} && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+
+# App = server code + built client, served by express
+COPY --from=builder /build/server /app
+COPY --from=builder /build/client/dist /app/public
+COPY --from=builder /build/client/public/fonts /app/public/fonts
+COPY --from=builder /build/VERSION /app/version
+
+# Persistent data + uploads live under /config; mirror upstream's symlink layout
+RUN mkdir -p /config/data/logs \
+        /config/uploads/files /config/uploads/covers \
+        /config/uploads/avatars /config/uploads/photos && \
+    ln -sf /config/data /app/data && \
+    ln -sf /config/uploads /app/uploads && \
+    mkdir -p /app/server && \
+    ln -sf /app/uploads /app/server/uploads && \
+    ln -sf /app/data /app/server/data && \
+    chown -R bsd:bsd /config /app
+
+ENV NODE_ENV=production \
+    PORT=3000
+
+COPY root/ /
+RUN chmod +x /etc/services.d/trek/run /healthz
+
+EXPOSE 3000
+VOLUME /config

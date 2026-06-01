@@ -1,0 +1,11 @@
+#!/bin/sh
+# Trek s6 service
+cd /app
+
+export NODE_ENV=production
+export PORT=3000
+
+# Signal readiness to CIT once the API answers
+s6-ready-when fetch -qo /dev/null http://localhost:3000/api/health
+
+exec /usr/local/bin/s6-setuidgid bsd /usr/local/bin/node --import tsx src/index.ts

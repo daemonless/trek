@@ -1,0 +1,17 @@
+# dbuild configuration file
+# Place in .daemonless/config.yaml or .dbuild.yaml (higher priority)
+#
+# Full reference: https://github.com/daemonless/dbuild
+
+icon: ':material-map-marker-path:'
+
+build:
+  variants:
+    - tag: latest
+      containerfile: Containerfile
+      tag_desc: "Built from the latest upstream TREK source release."
+
+cit:
+  mode: screenshot
+  port: 3000
+  health: /api/health
