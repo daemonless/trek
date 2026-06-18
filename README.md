@@ -34,16 +34,16 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   trek:
-    image: ghcr.io/daemonless/trek:latest
+    image: "ghcr.io/daemonless/trek:latest"
     container_name: trek
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000  # User ID for the application process
+      - PGID=1000  # Group ID for the application process
+      - TZ=UTC  # Timezone for the container
     volumes:
       - "/path/to/containers/trek:/config"
     ports:
-      - 3000:3000
+      - "3000:3000"
     restart: unless-stopped
 ```
 
@@ -109,7 +109,7 @@ podman run -d --name trek \
 - name: Deploy trek
   containers.podman.podman_container:
     name: trek
-    image: ghcr.io/daemonless/trek:latest
+    image: "ghcr.io/daemonless/trek:latest"
     state: started
     restart_policy: always
     env:
@@ -121,6 +121,8 @@ podman run -d --name trek \
     volumes:
       - "/path/to/containers/trek:/config"
 ```
+
+Access at: `http://localhost:3000`
 
 ## Parameters
 

@@ -20,19 +20,18 @@ RUN TREK_TAG=$(fetch -qo - "${UPSTREAM_URL}" | jq -r .tag_name) && \
     git clone --depth 1 -b "${TREK_TAG}" https://github.com/mauriceboe/TREK /build && \
     printf '%s' "${TREK_TAG#v}" > /build/VERSION
 
-# React client -> /build/client/dist.
-# The upstream `prebuild` rasterizes PWA icons with sharp (no FreeBSD build);
-# do it with rsvg-convert instead, then run vite directly to skip `prebuild`.
-RUN cd /build/client && \
-    npm ci && \
+RUN cd /build && \
+    NODE_ENV=development npm ci && \
+    npm run build --workspace=shared && \
+    cd client && \
     for spec in apple-touch-icon-180x180.png:180 icon-192x192.png:192 icon-512x512.png:512; do \
         name=${spec%:*}; size=${spec#*:}; \
         rsvg-convert -w "$size" -h "$size" public/icons/icon.svg -o "public/icons/$name"; \
     done && \
-    ./node_modules/.bin/vite build
+    npx vite build
 
 # Server production deps (builds native better-sqlite3 + fetches esbuild freebsd)
-RUN cd /build/server && npm ci --omit=dev
+RUN cd /build && npm ci --workspace=server --omit=dev
 
 # ---------------------------------------------------------------------------
 # Stage 2: runtime
@@ -56,7 +55,7 @@ LABEL org.opencontainers.image.title="Trek" \
       io.daemonless.volumes="/config" \
       io.daemonless.arch="${FREEBSD_ARCH}" \
       io.daemonless.upstream-url="${UPSTREAM_URL}" \
-      io.daemonless.upstream-jq=".tag_name | sub(\"^v\"; \"\")" \
+      io.daemonless.upstream-jq='.tag_name | sub("^v"; "")' \
       io.daemonless.healthcheck-url="http://localhost:3000/api/health" \
       io.daemonless.packages="${PACKAGES}"
 
@@ -66,6 +65,8 @@ RUN pkg install -y ${PACKAGES} && \
 
 # App = server code + built client, served by express
 COPY --from=builder /build/server /app
+COPY --from=builder /build/shared /shared
+COPY --from=builder /build/node_modules /node_modules
 COPY --from=builder /build/client/dist /app/public
 COPY --from=builder /build/client/public/fonts /app/public/fonts
 COPY --from=builder /build/VERSION /app/version
@@ -79,7 +80,7 @@ RUN mkdir -p /config/data/logs \
     mkdir -p /app/server && \
     ln -sf /app/uploads /app/server/uploads && \
     ln -sf /app/data /app/server/data && \
-    chown -R bsd:bsd /config /app
+    chown -R bsd:bsd /config /app /shared /node_modules
 
 ENV NODE_ENV=production \
     PORT=3000
