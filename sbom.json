@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-18T22:19:01Z",
+  "generated": "2026-06-23T20:22:45Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "3.1.1",
+      "app_version": "3.1.2",
       "arch": "amd64",
-      "generated": "2026-06-18T22:17:43Z",
+      "generated": "2026-06-23T20:21:29Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -539,11 +539,11 @@
           },
           {
             "name": "@trek/server",
-            "version": "3.1.1"
+            "version": "3.1.2"
           },
           {
             "name": "@trek/shared",
-            "version": "3.1.1"
+            "version": "3.1.2"
           },
           {
             "name": "@types/estree",
@@ -760,6 +760,14 @@
           {
             "name": "compress-commons",
             "version": "5.0.3"
+          },
+          {
+            "name": "compressible",
+            "version": "2.0.18"
+          },
+          {
+            "name": "compression",
+            "version": "1.8.1"
           },
           {
             "name": "concat-stream",
@@ -1342,6 +1350,10 @@
             "version": "2.4.1"
           },
           {
+            "name": "on-headers",
+            "version": "1.1.0"
+          },
+          {
             "name": "once",
             "version": "1.4.0"
           },
@@ -1833,12 +1845,12 @@
         "freebsd": 57,
         "go": 0,
         "java": 0,
-        "node": 395,
+        "node": 398,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 452
+        "total": 455
       }
     }
   }
