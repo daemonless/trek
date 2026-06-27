@@ -4,7 +4,7 @@
 # Source: Containerfile.j2
 # --------------------------------------------------------------------------
 
-ARG BASE_VERSION=15
+ARG BASE_VERSION=15.1
 
 # ---------------------------------------------------------------------------
 # Stage 1: build the React client and resolve server production deps
