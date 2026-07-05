@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-01T21:03:33Z",
+  "generated": "2026-07-05T15:28:17Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "3.1.4",
+      "app_version": "3.2.0",
       "arch": "amd64",
-      "generated": "2026-07-01T21:02:13Z",
+      "generated": "2026-07-05T15:27:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -27,7 +27,7 @@
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -99,7 +99,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -111,7 +111,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -119,7 +119,7 @@
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-zlib",
@@ -434,8 +434,16 @@
             "version": "1.1.0"
           },
           {
+            "name": "@microsoft/tsdoc",
+            "version": "0.16.0"
+          },
+          {
             "name": "@modelcontextprotocol/sdk",
             "version": "1.29.0"
+          },
+          {
+            "name": "@napi-rs/canvas",
+            "version": "0.1.80"
           },
           {
             "name": "@nestjs/common",
@@ -446,8 +454,16 @@
             "version": "11.1.27"
           },
           {
+            "name": "@nestjs/mapped-types",
+            "version": "2.1.1"
+          },
+          {
             "name": "@nestjs/platform-express",
             "version": "11.1.27"
+          },
+          {
+            "name": "@nestjs/swagger",
+            "version": "11.4.5"
           },
           {
             "name": "@noble/hashes",
@@ -530,6 +546,10 @@
             "version": "1.14.3"
           },
           {
+            "name": "@scarf/scarf",
+            "version": "1.4.0"
+          },
+          {
             "name": "@simplewebauthn/server",
             "version": "13.3.1"
           },
@@ -547,11 +567,11 @@
           },
           {
             "name": "@trek/server",
-            "version": "3.1.4"
+            "version": "3.2.0"
           },
           {
             "name": "@trek/shared",
-            "version": "3.1.4"
+            "version": "3.2.0"
           },
           {
             "name": "@types/estree",
@@ -608,6 +628,10 @@
           {
             "name": "archiver-utils",
             "version": "4.0.1"
+          },
+          {
+            "name": "argparse",
+            "version": "2.0.1"
           },
           {
             "name": "array-flatten",
@@ -1178,6 +1202,10 @@
             "version": "4.0.0"
           },
           {
+            "name": "js-yaml",
+            "version": "4.3.0"
+          },
+          {
             "name": "jsdom",
             "version": "29.1.1"
           },
@@ -1422,6 +1450,14 @@
             "version": "0.1.13"
           },
           {
+            "name": "pdf-parse",
+            "version": "2.4.5"
+          },
+          {
+            "name": "pdfjs-dist",
+            "version": "5.4.296"
+          },
+          {
             "name": "pixelmatch",
             "version": "5.3.0"
           },
@@ -1630,6 +1666,10 @@
             "version": "10.3.5"
           },
           {
+            "name": "swagger-ui-dist",
+            "version": "5.32.8"
+          },
+          {
             "name": "symbol-tree",
             "version": "3.2.4"
           },
@@ -1712,6 +1752,10 @@
           {
             "name": "typescript",
             "version": "6.0.3"
+          },
+          {
+            "name": "tz-lookup",
+            "version": "6.1.25"
           },
           {
             "name": "uid",
@@ -1853,12 +1897,12 @@
         "freebsd": 59,
         "go": 0,
         "java": 0,
-        "node": 398,
+        "node": 409,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 457
+        "total": 468
       }
     }
   }
