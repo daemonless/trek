@@ -23,6 +23,7 @@ RUN TREK_TAG=$(fetch -qo - "${UPSTREAM_URL}" | jq -r .tag_name) && \
 RUN cd /build && \
     NODE_ENV=development npm ci && \
     npm run build --workspace=shared && \
+    npm run build --workspace=server && \
     cd client && \
     for spec in apple-touch-icon-180x180.png:180 icon-192x192.png:192 icon-512x512.png:512; do \
         name=${spec%:*}; size=${spec#*:}; \
@@ -86,7 +87,8 @@ ENV NODE_ENV=production \
     PORT=3000
 
 COPY root/ /
-RUN chmod +x /etc/services.d/trek/run /healthz
+RUN chmod +x /etc/services.d/trek/run /healthz && \
+    chmod 0644 /usr/local/share/trek/dom-polyfill.cjs
 
 EXPOSE 3000
 VOLUME /config
