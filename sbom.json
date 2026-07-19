@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-18T21:21:21Z",
+  "generated": "2026-07-19T21:41:56Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "3.4.0",
+      "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-07-18T21:20:03Z",
+      "generated": "2026-07-19T21:40:36Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -575,11 +575,11 @@
           },
           {
             "name": "@trek/server",
-            "version": "3.4.0"
+            "version": "3.4.1"
           },
           {
             "name": "@trek/shared",
-            "version": "3.4.0"
+            "version": "3.4.1"
           },
           {
             "name": "@types/estree",
