@@ -70,7 +70,7 @@ services:
     name: trek
     options:
       - container: 'boot args:--pull'
-      - expose: '3000:3000 proto:tcp' \
+      - expose: '3000:3000 proto:tcp'
     oci:
       user: root
       environment:
