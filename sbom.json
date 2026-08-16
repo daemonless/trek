@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-09T09:47:29Z",
+  "generated": "2026-08-16T17:49:04Z",
   "image": "trek",
   "tags": {
     "latest": {
       "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-08-09T09:45:11Z",
+      "generated": "2026-08-16T17:47:46Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
