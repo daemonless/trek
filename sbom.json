@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-29T15:20:28Z",
+  "generated": "2026-09-03T14:43:11Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "4.1.1",
+      "app_version": "4.2.0",
       "arch": "amd64",
-      "generated": "2026-08-29T15:19:13Z",
+      "generated": "2026-09-03T14:41:49Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -147,7 +147,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -175,7 +175,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.126.1"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -870,12 +870,12 @@
           {
             "name": "@trek/server",
             "purl": "",
-            "version": "4.1.1"
+            "version": "4.2.0"
           },
           {
             "name": "@trek/shared",
             "purl": "",
-            "version": "4.1.1"
+            "version": "4.2.0"
           },
           {
             "name": "@types/estree",
@@ -1450,7 +1450,7 @@
           {
             "name": "fast-uri",
             "purl": "",
-            "version": "3.1.5"
+            "version": "3.1.7"
           },
           {
             "name": "fast-xml-builder",
