@@ -1,0 +1,20 @@
+#!/bin/sh
+# Create Trek's runtime directories under /config.
+#
+# The Containerfile makes these at build time too, but /config is a VOLUME:
+# once a host directory is mounted over it the build-time contents are hidden,
+# leaving /app/data and /app/uploads as dangling symlinks. The app then dies on
+# mkdir with ENOENT and s6 restarts it forever. They have to be created here,
+# after the mount, on every start.
+
+set -e
+
+mkdir -p /config/data/logs \
+    /config/uploads/files \
+    /config/uploads/covers \
+    /config/uploads/avatars \
+    /config/uploads/photos
+
+chown -R bsd:bsd /config
+
+echo "Trek directories initialized"

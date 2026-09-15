@@ -87,7 +87,7 @@ ENV NODE_ENV=production \
     PORT=3000
 
 COPY root/ /
-RUN chmod +x /etc/services.d/trek/run /healthz && \
+RUN chmod +x /etc/services.d/trek/run /healthz /etc/cont-init.d/* && \
     chmod 0644 /usr/local/share/trek/dom-polyfill.cjs
 
 EXPOSE 3000
