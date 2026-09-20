@@ -14,9 +14,11 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 
 ARG UPSTREAM_URL="https://api.github.com/repos/mauriceboe/TREK/releases/latest"
 
+# node22: node24's ObjectWrap cleanup-hook backport aborts better-sqlite3's
+# Statement destructor during GC (nodejs/node#65446, open across 24.x).
 # Toolchain for node-gyp to compile better-sqlite3 (no FreeBSD prebuilt);
 # librsvg2-rust (rsvg-convert) rasterizes the PWA icons in place of sharp.
-RUN pkg install -y node24 npm-node24 git-tiny python3 gmake librsvg2-rust \
+RUN pkg install -y node22 npm-node22 git-tiny python3 gmake librsvg2-rust \
         FreeBSD-clang FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-toolchain \
         FreeBSD-runtime-dev FreeBSD-utilities-dev FreeBSD-libexecinfo-dev && \
     pkg clean -ay
@@ -46,7 +48,7 @@ RUN cd /build && npm ci --workspace=server --omit=dev
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node24"
+ARG PACKAGES="node22"
 ARG UPSTREAM_URL
 
 LABEL org.opencontainers.image.title="Trek" \
