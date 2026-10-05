@@ -40,7 +40,7 @@ services:
       - PGID=1000  # Group ID for the application process
       - TZ=UTC  # Timezone for the container
     volumes:
-      - "/path/to/containers/trek:/config"
+      - "/containers/trek:/config"
     ports:
       - "3000:3000"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
@@ -85,7 +85,7 @@ services:
       - trek: /config
 volumes:
   trek:
-    device: '/path/to/containers/trek'
+    device: '/containers/trek'
 ```
 
 **Makejail**:
@@ -101,45 +101,6 @@ OPTION from=ghcr.io/daemonless/trek:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
-### Podman CLI
-
-```bash
-podman run -d --name trek \
-  -p 3000:3000 \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -v /path/to/containers/trek:/config \
-  ghcr.io/daemonless/trek:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o expose="3000:3000 proto:tcp" \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -o fstab="/path/to/containers/trek /config <pseudofs>" \
-  ghcr.io/daemonless/trek:latest trek
-```
-
-Save the files above, then run `sh run.sh`.
 
 
 > [!WARNING]
@@ -164,40 +125,10 @@ services:
       - PGID=1000
       - TZ=UTC
     volumes:
-      - "/path/to/containers/trek:/config"
+      - "/containers/trek:/config"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env PUID=1000 \
-  --env PGID=1000 \
-  --env TZ=UTC \
-  --volume /path/to/containers/trek /config \
-  trek ghcr.io/daemonless/trek:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy trek
-  containers.podman.podman_container:
-    name: trek
-    image: "ghcr.io/daemonless/trek:latest"
-    state: started
-    restart_policy: always
-    env:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "UTC"
-    ports:
-      - "3000:3000"
-    volumes:
-      - "/path/to/containers/trek:/config"
-```
-
-Save as `trek-deploy.yaml`, then run `ansible-playbook trek-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 Access at: `http://localhost:3000`
 
