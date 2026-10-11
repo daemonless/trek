@@ -17,10 +17,12 @@ RUN pkg install -y node22 npm-node22 git-tiny python3 gmake librsvg2-rust \
         FreeBSD-runtime-dev FreeBSD-utilities-dev FreeBSD-libexecinfo-dev && \
     pkg clean -ay
 
-# Clone the latest release tag and record the version
+# Clone the latest release tag and record the version. npm 12 blocks dependency
+# install scripts unless allowed, which would skip better-sqlite3's node-gyp build.
 RUN TREK_TAG=$(fetch -qo - "${UPSTREAM_URL}" | jq -r .tag_name) && \
     git clone --depth 1 -b "${TREK_TAG}" https://github.com/mauriceboe/TREK /build && \
-    printf '%s' "${TREK_TAG#v}" > /build/VERSION
+    printf '%s' "${TREK_TAG#v}" > /build/VERSION && \
+    echo 'allow-scripts=better-sqlite3' >> /build/.npmrc
 
 RUN cd /build && \
     NODE_ENV=development npm ci && \
@@ -34,7 +36,8 @@ RUN cd /build && \
     npx vite build
 
 # Server production deps (builds native better-sqlite3 + fetches esbuild freebsd)
-RUN cd /build && npm ci --workspace=server --omit=dev
+RUN cd /build && npm ci --workspace=server --omit=dev && \
+    test -f node_modules/better-sqlite3/build/Release/better_sqlite3.node
 
 # ---------------------------------------------------------------------------
 # Stage 2: runtime
