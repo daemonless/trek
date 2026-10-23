@@ -1,0 +1,10 @@
+#!/bin/sh
+# Start trek; /init has already dropped to the run user.
+cd /app
+
+export NODE_ENV=production
+export PORT=3000
+
+exec /usr/local/bin/node \
+    --require /usr/local/share/trek/dom-polyfill.cjs \
+    --require tsconfig-paths/register dist/index.js

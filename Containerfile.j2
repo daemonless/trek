@@ -42,7 +42,7 @@ RUN cd /build && npm ci --workspace=server --omit=dev && \
 # ---------------------------------------------------------------------------
 # Stage 2: runtime
 # ---------------------------------------------------------------------------
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22"
@@ -92,7 +92,11 @@ ENV NODE_ENV=production \
     PORT=3000
 
 COPY root/ /
-RUN chmod +x /etc/services.d/trek/run /healthz /etc/cont-init.d/* && \
+RUN chmod +x /daemonless/libexec/trek /daemonless/init.d/*
+
+CMD ["/daemonless/libexec/trek"]
+
+RUN chmod +x /healthz && \
     chmod 0644 /usr/local/share/trek/dom-polyfill.cjs
 
 EXPOSE 3000
