@@ -10,7 +10,7 @@ ARG BASE_VERSION=15.1
 # Stage 1: build the React client and resolve server production deps
 # (better-sqlite3 has no FreeBSD prebuilt, so node-gyp compiles it from source)
 # ---------------------------------------------------------------------------
-FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION} AS builder
 
 ARG UPSTREAM_URL="https://api.github.com/repos/mauriceboe/TREK/releases/latest"
 
