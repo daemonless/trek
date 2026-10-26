@@ -30,10 +30,11 @@ RUN TREK_TAG=$(fetch -qo - "${UPSTREAM_URL}" | jq -r .tag_name) && \
     printf '%s' "${TREK_TAG#v}" > /build/VERSION && \
     echo 'allow-scripts=better-sqlite3' >> /build/.npmrc
 
+# TREK 5 server tsc needs more than the default ~2 GB heap (upstream sets 4096 too).
 RUN cd /build && \
     NODE_ENV=development npm ci && \
     npm run build --workspace=shared && \
-    npm run build --workspace=server && \
+    NODE_OPTIONS=--max-old-space-size=4096 npm run build --workspace=server && \
     cd client && \
     for spec in apple-touch-icon-180x180.png:180 icon-192x192.png:192 icon-512x512.png:512; do \
         name=${spec%:*}; size=${spec#*:}; \
@@ -41,9 +42,14 @@ RUN cd /build && \
     done && \
     npx vite build
 
-# Server production deps (builds native better-sqlite3 + fetches esbuild freebsd)
+# Server production deps. better-sqlite3 13 ships prebuilds for linux/darwin/win
+# only and no install script (gypfile: false), so npm ci no longer compiles it:
+# run node-gyp (bundled with npm) ourselves. npm may hoist it to /build/node_modules.
 RUN cd /build && npm ci --workspace=server --omit=dev && \
-    test -f server/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+    BSQ=$(dirname "$(cd server && node -p "require.resolve('better-sqlite3/package.json')")") && \
+    cd "$BSQ" && \
+    node "$(npm root -g)/npm/node_modules/node-gyp/bin/node-gyp.js" rebuild --release && \
+    test -f "$BSQ/build/Release/better_sqlite3.node"
 
 # ---------------------------------------------------------------------------
 # Stage 2: runtime
