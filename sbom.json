@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T10:36:08Z",
+  "generated": "2026-10-26T13:49:40Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "4.3.4",
+      "app_version": "5.0.0",
       "arch": "amd64",
-      "generated": "2026-10-23T10:35:05Z",
+      "generated": "2026-10-26T13:47:49Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -352,7 +352,7 @@
               "MIT"
             ],
             "name": "node22",
-            "version": "22.23.2_1"
+            "version": "22.23.2_2"
           },
           {
             "licenses": [
@@ -405,22 +405,12 @@
           {
             "name": "@asamuzakjp/css-color",
             "purl": "",
-            "version": "5.1.11"
+            "version": "7.0.0"
           },
           {
             "name": "@asamuzakjp/dom-selector",
             "purl": "",
-            "version": "7.1.1"
-          },
-          {
-            "name": "@asamuzakjp/generational-cache",
-            "purl": "",
-            "version": "1.0.1"
-          },
-          {
-            "name": "@asamuzakjp/nwsapi",
-            "purl": "",
-            "version": "2.3.9"
+            "version": "9.2.1"
           },
           {
             "name": "@aws-lite/client",
@@ -445,17 +435,17 @@
           {
             "name": "@csstools/color-helpers",
             "purl": "",
-            "version": "6.0.2"
+            "version": "6.1.1"
           },
           {
             "name": "@csstools/css-calc",
             "purl": "",
-            "version": "3.2.1"
+            "version": "3.4.0"
           },
           {
             "name": "@csstools/css-color-parser",
             "purl": "",
-            "version": "4.1.7"
+            "version": "4.2.3"
           },
           {
             "name": "@csstools/css-parser-algorithms",
@@ -465,7 +455,7 @@
           {
             "name": "@csstools/css-syntax-patches-for-csstree",
             "purl": "",
-            "version": "1.1.5"
+            "version": "1.1.14"
           },
           {
             "name": "@csstools/css-tokenizer",
@@ -648,9 +638,44 @@
             "version": "0.16.0"
           },
           {
+            "name": "@mikro-orm/cli",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
+            "name": "@mikro-orm/core",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
+            "name": "@mikro-orm/migrations",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
+            "name": "@mikro-orm/nestjs",
+            "purl": "",
+            "version": "7.1.0"
+          },
+          {
+            "name": "@mikro-orm/seeder",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
+            "name": "@mikro-orm/sql",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
+            "name": "@mikro-orm/sqlite",
+            "purl": "",
+            "version": "7.2.1"
+          },
+          {
             "name": "@modelcontextprotocol/sdk",
             "purl": "",
-            "version": "1.30.0"
+            "version": "1.32.1"
           },
           {
             "name": "@napi-rs/canvas",
@@ -660,7 +685,7 @@
           {
             "name": "@nestjs/common",
             "purl": "",
-            "version": "11.1.27"
+            "version": "11.2.5"
           },
           {
             "name": "@nestjs/config",
@@ -670,7 +695,7 @@
           {
             "name": "@nestjs/core",
             "purl": "",
-            "version": "11.1.27"
+            "version": "11.2.5"
           },
           {
             "name": "@nestjs/mapped-types",
@@ -680,12 +705,12 @@
           {
             "name": "@nestjs/platform-express",
             "purl": "",
-            "version": "11.1.27"
+            "version": "11.2.5"
           },
           {
             "name": "@nestjs/platform-ws",
             "purl": "",
-            "version": "11.1.29"
+            "version": "11.2.5"
           },
           {
             "name": "@nestjs/schedule",
@@ -700,7 +725,7 @@
           {
             "name": "@nestjs/websockets",
             "purl": "",
-            "version": "11.1.29"
+            "version": "11.2.5"
           },
           {
             "name": "@noble/hashes",
@@ -710,7 +735,7 @@
           {
             "name": "@nodable/entities",
             "purl": "",
-            "version": "2.2.0"
+            "version": "3.0.0"
           },
           {
             "name": "@otplib/core",
@@ -810,7 +835,12 @@
           {
             "name": "@simplewebauthn/server",
             "purl": "",
-            "version": "13.3.2"
+            "version": "13.3.3"
+          },
+          {
+            "name": "@standard-schema/spec",
+            "purl": "",
+            "version": "1.1.0"
           },
           {
             "name": "@tokenizer/inflate",
@@ -825,17 +855,22 @@
           {
             "name": "@trek/server",
             "purl": "",
-            "version": "4.3.4"
+            "version": "5.0.0"
           },
           {
             "name": "@trek/shared",
             "purl": "",
-            "version": "4.3.4"
+            "version": "5.0.0"
           },
           {
             "name": "@types/estree",
             "purl": "",
             "version": "1.0.9"
+          },
+          {
+            "name": "@types/json-schema",
+            "purl": "",
+            "version": "7.0.15"
           },
           {
             "name": "@types/luxon",
@@ -1000,7 +1035,7 @@
           {
             "name": "bidi-js",
             "purl": "",
-            "version": "1.0.3"
+            "version": "1.1.0"
           },
           {
             "name": "bluebird",
@@ -1015,12 +1050,12 @@
           {
             "name": "body-parser",
             "purl": "",
-            "version": "1.20.6"
+            "version": "1.20.9"
           },
           {
             "name": "brace-expansion",
             "purl": "",
-            "version": "2.1.4"
+            "version": "2.1.7"
           },
           {
             "name": "buffer-crc32",
@@ -1031,11 +1066,6 @@
             "name": "buffer-equal-constant-time",
             "purl": "",
             "version": "1.0.1"
-          },
-          {
-            "name": "buffer-from",
-            "purl": "",
-            "version": "1.1.2"
           },
           {
             "name": "busboy",
@@ -1095,12 +1125,7 @@
           {
             "name": "compression",
             "purl": "",
-            "version": "1.8.1"
-          },
-          {
-            "name": "concat-stream",
-            "purl": "",
-            "version": "2.0.0"
+            "version": "1.8.2"
           },
           {
             "name": "content-disposition",
@@ -1215,7 +1240,7 @@
           {
             "name": "dompurify",
             "purl": "",
-            "version": "3.4.12"
+            "version": "3.4.17"
           },
           {
             "name": "dotenv",
@@ -1288,6 +1313,11 @@
             "version": "0.28.1"
           },
           {
+            "name": "escalade",
+            "purl": "",
+            "version": "3.2.0"
+          },
+          {
             "name": "escape-html",
             "purl": "",
             "version": "1.0.3"
@@ -1325,7 +1355,7 @@
           {
             "name": "express",
             "purl": "",
-            "version": "4.22.2"
+            "version": "4.22.3"
           },
           {
             "name": "express-rate-limit",
@@ -1350,7 +1380,7 @@
           {
             "name": "fast-uri",
             "purl": "",
-            "version": "3.1.7"
+            "version": "3.1.9"
           },
           {
             "name": "fast-xml-builder",
@@ -1360,7 +1390,7 @@
           {
             "name": "fast-xml-parser",
             "purl": "",
-            "version": "5.9.2"
+            "version": "5.11.1"
           },
           {
             "name": "file-type",
@@ -1395,7 +1425,7 @@
           {
             "name": "fs-extra",
             "purl": "",
-            "version": "11.3.5"
+            "version": "11.3.1"
           },
           {
             "name": "fs.realpath",
@@ -1460,12 +1490,12 @@
           {
             "name": "helmet",
             "purl": "",
-            "version": "8.2.0"
+            "version": "8.3.0"
           },
           {
             "name": "hono",
             "purl": "",
-            "version": "4.13.7"
+            "version": "4.13.13"
           },
           {
             "name": "html-encoding-sniffer",
@@ -1505,7 +1535,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.5.0"
+            "version": "10.7.4"
           },
           {
             "name": "ipaddr.js",
@@ -1530,7 +1560,7 @@
           {
             "name": "is-unsafe",
             "purl": "",
-            "version": "1.0.1"
+            "version": "2.0.2"
           },
           {
             "name": "isarray",
@@ -1545,7 +1575,7 @@
           {
             "name": "isomorphic-dompurify",
             "purl": "",
-            "version": "3.17.0"
+            "version": "3.23.0"
           },
           {
             "name": "iterare",
@@ -1575,12 +1605,12 @@
           {
             "name": "js-yaml",
             "purl": "",
-            "version": "5.3.0"
+            "version": "5.4.3"
           },
           {
             "name": "jsdom",
             "purl": "",
-            "version": "29.1.1"
+            "version": "30.1.0"
           },
           {
             "name": "json-schema-traverse",
@@ -1616,6 +1646,11 @@
             "name": "jws",
             "purl": "",
             "version": "4.0.1"
+          },
+          {
+            "name": "kysely",
+            "purl": "",
+            "version": "0.29.6"
           },
           {
             "name": "lazystream",
@@ -1675,7 +1710,7 @@
           {
             "name": "lru-cache",
             "purl": "",
-            "version": "11.5.1"
+            "version": "11.5.3"
           },
           {
             "name": "luxon",
@@ -1706,6 +1741,11 @@
             "name": "methods",
             "purl": "",
             "version": "1.1.2"
+          },
+          {
+            "name": "mikro-orm",
+            "purl": "",
+            "version": "7.2.1"
           },
           {
             "name": "mime",
@@ -1740,7 +1780,7 @@
           {
             "name": "multer",
             "purl": "",
-            "version": "2.3.0"
+            "version": "2.5.0"
           },
           {
             "name": "negotiator",
@@ -1765,7 +1805,7 @@
           {
             "name": "nodemailer",
             "purl": "",
-            "version": "9.1.1"
+            "version": "10.2.1"
           },
           {
             "name": "normalize-path",
@@ -1865,7 +1905,7 @@
           {
             "name": "path-expression-matcher",
             "purl": "",
-            "version": "1.5.0"
+            "version": "1.6.2"
           },
           {
             "name": "path-key",
@@ -1910,7 +1950,7 @@
           {
             "name": "proxy-addr",
             "purl": "",
-            "version": "2.0.7"
+            "version": "2.0.8"
           },
           {
             "name": "punycode",
@@ -1935,7 +1975,7 @@
           {
             "name": "qs",
             "purl": "",
-            "version": "6.15.2"
+            "version": "6.16.1"
           },
           {
             "name": "range-parser",
@@ -2070,7 +2110,7 @@
           {
             "name": "source-map-js",
             "purl": "",
-            "version": "1.2.1"
+            "version": "1.2.2"
           },
           {
             "name": "statuses",
@@ -2110,7 +2150,7 @@
           {
             "name": "strnum",
             "purl": "",
-            "version": "2.4.1"
+            "version": "2.4.2"
           },
           {
             "name": "strtok3",
@@ -2121,11 +2161,6 @@
             "name": "swagger-ui-dist",
             "purl": "",
             "version": "5.32.13"
-          },
-          {
-            "name": "symbol-tree",
-            "purl": "",
-            "version": "3.2.4"
           },
           {
             "name": "tar-stream",
@@ -2175,7 +2210,7 @@
           {
             "name": "tough-cookie",
             "purl": "",
-            "version": "6.0.1"
+            "version": "6.0.2"
           },
           {
             "name": "tr46",
@@ -2195,7 +2230,7 @@
           {
             "name": "tsx",
             "purl": "",
-            "version": "4.22.4"
+            "version": "4.23.15"
           },
           {
             "name": "tsyringe",
@@ -2206,11 +2241,6 @@
             "name": "type-is",
             "purl": "",
             "version": "1.6.18"
-          },
-          {
-            "name": "typedarray",
-            "purl": "",
-            "version": "0.0.6"
           },
           {
             "name": "typescript",
@@ -2235,7 +2265,7 @@
           {
             "name": "undici",
             "purl": "",
-            "version": "7.29.0"
+            "version": "7.30.1"
           },
           {
             "name": "universalify",
@@ -2250,7 +2280,7 @@
           {
             "name": "unzipper",
             "purl": "",
-            "version": "0.12.3"
+            "version": "0.12.5"
           },
           {
             "name": "utif2",
@@ -2270,7 +2300,7 @@
           {
             "name": "uuid",
             "purl": "",
-            "version": "14.0.0"
+            "version": "14.0.2"
           },
           {
             "name": "vary",
@@ -2320,7 +2350,7 @@
           {
             "name": "ws",
             "purl": "",
-            "version": "8.21.1"
+            "version": "8.21.3"
           },
           {
             "name": "xml-name-validator",
@@ -2375,7 +2405,7 @@
           {
             "name": "zod",
             "purl": "",
-            "version": "3.25.76"
+            "version": "4.6.7"
           },
           {
             "name": "zod-to-json-schema",
@@ -2394,12 +2424,12 @@
         "freebsd": 55,
         "go": 0,
         "java": 0,
-        "node": 396,
+        "node": 402,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 451
+        "total": 457
       }
     }
   }
