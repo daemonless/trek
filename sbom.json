@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-26T13:49:40Z",
+  "generated": "2026-10-28T16:01:07Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "5.0.0",
+      "app_version": "5.0.1",
       "arch": "amd64",
-      "generated": "2026-10-26T13:47:49Z",
+      "generated": "2026-10-28T15:59:07Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -252,7 +252,7 @@
               "MIT"
             ],
             "name": "brotli",
-            "version": "1.2.0,1"
+            "version": "1.2.1,1"
           },
           {
             "licenses": [
@@ -855,12 +855,12 @@
           {
             "name": "@trek/server",
             "purl": "",
-            "version": "5.0.0"
+            "version": "5.0.1"
           },
           {
             "name": "@trek/shared",
             "purl": "",
-            "version": "5.0.0"
+            "version": "5.0.1"
           },
           {
             "name": "@types/estree",
