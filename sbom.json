@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-31T23:37:03Z",
+  "generated": "2026-11-04T15:17:05Z",
   "image": "trek",
   "tags": {
     "latest": {
       "app_version": "5.1.0",
       "arch": "amd64",
-      "generated": "2026-10-31T23:35:11Z",
+      "generated": "2026-11-04T15:15:07Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -381,7 +381,7 @@
               "PD"
             ],
             "name": "sqlite3",
-            "version": "3.53.4,1"
+            "version": "3.54.1,1"
           },
           {
             "licenses": [
