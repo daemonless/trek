@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-09T14:01:55Z",
+  "generated": "2026-11-10T10:46:41Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "5.1.2",
+      "app_version": "5.1.3",
       "arch": "amd64",
-      "generated": "2026-11-09T14:00:40Z",
+      "generated": "2026-11-10T10:45:21Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -415,7 +415,7 @@
           {
             "name": "@aws-lite/client",
             "purl": "",
-            "version": "0.23.7"
+            "version": "0.24.1"
           },
           {
             "name": "@aws-lite/s3",
@@ -640,17 +640,17 @@
           {
             "name": "@mikro-orm/cli",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@mikro-orm/core",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@mikro-orm/migrations",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@mikro-orm/nestjs",
@@ -660,22 +660,22 @@
           {
             "name": "@mikro-orm/seeder",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@mikro-orm/sql",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@mikro-orm/sqlite",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "@modelcontextprotocol/sdk",
             "purl": "",
-            "version": "1.32.1"
+            "version": "1.32.2"
           },
           {
             "name": "@napi-rs/canvas",
@@ -715,7 +715,7 @@
           {
             "name": "@nestjs/schedule",
             "purl": "",
-            "version": "6.1.3"
+            "version": "12.0.3"
           },
           {
             "name": "@nestjs/swagger",
@@ -735,7 +735,7 @@
           {
             "name": "@nodable/entities",
             "purl": "",
-            "version": "3.0.0"
+            "version": "3.1.0"
           },
           {
             "name": "@otplib/core",
@@ -855,12 +855,12 @@
           {
             "name": "@trek/server",
             "purl": "",
-            "version": "5.1.2"
+            "version": "5.1.3"
           },
           {
             "name": "@trek/shared",
             "purl": "",
-            "version": "5.1.2"
+            "version": "5.1.3"
           },
           {
             "name": "@types/estree",
@@ -1275,7 +1275,7 @@
           {
             "name": "emoji-regex",
             "purl": "",
-            "version": "8.0.0"
+            "version": "10.6.0"
           },
           {
             "name": "encodeurl",
@@ -1385,12 +1385,12 @@
           {
             "name": "fast-xml-builder",
             "purl": "",
-            "version": "1.2.0"
+            "version": "1.3.1"
           },
           {
             "name": "fast-xml-parser",
             "purl": "",
-            "version": "5.11.1"
+            "version": "5.12.0"
           },
           {
             "name": "file-type",
@@ -1441,6 +1441,11 @@
             "name": "get-caller-file",
             "purl": "",
             "version": "2.0.5"
+          },
+          {
+            "name": "get-east-asian-width",
+            "purl": "",
+            "version": "1.6.0"
           },
           {
             "name": "get-intrinsic",
@@ -1560,7 +1565,7 @@
           {
             "name": "is-unsafe",
             "purl": "",
-            "version": "2.0.2"
+            "version": "2.0.3"
           },
           {
             "name": "isarray",
@@ -1650,7 +1655,7 @@
           {
             "name": "kysely",
             "purl": "",
-            "version": "0.29.6"
+            "version": "0.29.8"
           },
           {
             "name": "lazystream",
@@ -1745,7 +1750,7 @@
           {
             "name": "mikro-orm",
             "purl": "",
-            "version": "7.2.1"
+            "version": "7.2.8"
           },
           {
             "name": "mime",
@@ -1805,7 +1810,7 @@
           {
             "name": "nodemailer",
             "purl": "",
-            "version": "10.2.1"
+            "version": "10.4.0"
           },
           {
             "name": "normalize-path",
@@ -2050,7 +2055,7 @@
           {
             "name": "semver",
             "purl": "",
-            "version": "7.8.5"
+            "version": "7.8.6"
           },
           {
             "name": "send",
@@ -2150,7 +2155,7 @@
           {
             "name": "strnum",
             "purl": "",
-            "version": "2.4.2"
+            "version": "2.5.1"
           },
           {
             "name": "strtok3",
@@ -2300,7 +2305,7 @@
           {
             "name": "uuid",
             "purl": "",
-            "version": "14.0.2"
+            "version": "14.0.3"
           },
           {
             "name": "vary",
@@ -2360,7 +2365,7 @@
           {
             "name": "xml-naming",
             "purl": "",
-            "version": "0.1.0"
+            "version": "0.3.0"
           },
           {
             "name": "xml-parse-from-string",
@@ -2424,12 +2429,12 @@
         "freebsd": 55,
         "go": 0,
         "java": 0,
-        "node": 402,
+        "node": 403,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 457
+        "total": 458
       }
     }
   }
