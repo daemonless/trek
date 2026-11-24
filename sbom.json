@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-12T21:08:22Z",
+  "generated": "2026-11-24T01:12:42Z",
   "image": "trek",
   "tags": {
     "latest": {
-      "app_version": "5.1.4",
+      "app_version": "5.2.0",
       "arch": "amd64",
-      "generated": "2026-11-12T21:07:00Z",
+      "generated": "2026-11-24T01:11:15Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -366,7 +366,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -658,6 +658,11 @@
             "version": "7.1.0"
           },
           {
+            "name": "@mikro-orm/postgresql",
+            "purl": "",
+            "version": "7.2.8"
+          },
+          {
             "name": "@mikro-orm/seeder",
             "purl": "",
             "version": "7.2.8"
@@ -715,7 +720,7 @@
           {
             "name": "@nestjs/schedule",
             "purl": "",
-            "version": "12.0.3"
+            "version": "12.0.4"
           },
           {
             "name": "@nestjs/swagger",
@@ -828,6 +833,11 @@
             "version": "1.14.3"
           },
           {
+            "name": "@pinojs/redact",
+            "purl": "",
+            "version": "0.4.0"
+          },
+          {
             "name": "@scarf/scarf",
             "purl": "",
             "version": "1.4.0"
@@ -855,12 +865,12 @@
           {
             "name": "@trek/server",
             "purl": "",
-            "version": "5.1.4"
+            "version": "5.2.0"
           },
           {
             "name": "@trek/shared",
             "purl": "",
-            "version": "5.1.4"
+            "version": "5.2.0"
           },
           {
             "name": "@types/estree",
@@ -891,6 +901,11 @@
             "name": "@types/trusted-types",
             "purl": "",
             "version": "2.0.7"
+          },
+          {
+            "name": "@zone-eu/mailsplit",
+            "purl": "",
+            "version": "5.4.16"
           },
           {
             "name": "accepts",
@@ -966,6 +981,11 @@
             "name": "asynckit",
             "purl": "",
             "version": "0.4.0"
+          },
+          {
+            "name": "atomic-sleep",
+            "purl": "",
+            "version": "1.0.0"
           },
           {
             "name": "await-to-js",
@@ -1213,11 +1233,6 @@
             "version": "10.6.0"
           },
           {
-            "name": "deepmerge",
-            "purl": "",
-            "version": "4.3.1"
-          },
-          {
             "name": "delayed-stream",
             "purl": "",
             "version": "1.0.0"
@@ -1281,6 +1296,11 @@
             "name": "encodeurl",
             "purl": "",
             "version": "2.0.0"
+          },
+          {
+            "name": "encoding-japanese",
+            "purl": "",
+            "version": "2.3.0"
           },
           {
             "name": "entities",
@@ -1385,12 +1405,12 @@
           {
             "name": "fast-xml-builder",
             "purl": "",
-            "version": "1.3.1"
+            "version": "1.3.2"
           },
           {
             "name": "fast-xml-parser",
             "purl": "",
-            "version": "5.12.0"
+            "version": "5.12.1"
           },
           {
             "name": "file-type",
@@ -1500,7 +1520,7 @@
           {
             "name": "hono",
             "purl": "",
-            "version": "4.13.13"
+            "version": "4.13.18"
           },
           {
             "name": "html-encoding-sniffer",
@@ -1526,6 +1546,11 @@
             "name": "image-q",
             "purl": "",
             "version": "4.0.0"
+          },
+          {
+            "name": "imapflow",
+            "purl": "",
+            "version": "1.7.8"
           },
           {
             "name": "inflight",
@@ -1663,6 +1688,21 @@
             "version": "1.0.1"
           },
           {
+            "name": "libbase64",
+            "purl": "",
+            "version": "1.3.0"
+          },
+          {
+            "name": "libmime",
+            "purl": "",
+            "version": "5.4.3"
+          },
+          {
+            "name": "libqp",
+            "purl": "",
+            "version": "2.1.1"
+          },
+          {
             "name": "load-esm",
             "purl": "",
             "version": "1.0.3"
@@ -1795,7 +1835,7 @@
           {
             "name": "nestjs-zod",
             "purl": "",
-            "version": "5.5.0"
+            "version": "5.6.0"
           },
           {
             "name": "node-addon-api",
@@ -1810,7 +1850,7 @@
           {
             "name": "nodemailer",
             "purl": "",
-            "version": "10.4.0"
+            "version": "10.6.1"
           },
           {
             "name": "normalize-path",
@@ -1836,6 +1876,11 @@
             "name": "omggif",
             "purl": "",
             "version": "1.0.10"
+          },
+          {
+            "name": "on-exit-leak-free",
+            "purl": "",
+            "version": "2.1.2"
           },
           {
             "name": "on-finished",
@@ -1933,6 +1978,66 @@
             "version": "5.4.296"
           },
           {
+            "name": "pg",
+            "purl": "",
+            "version": "8.23.1"
+          },
+          {
+            "name": "pg-cloudflare",
+            "purl": "",
+            "version": "1.4.1"
+          },
+          {
+            "name": "pg-connection-string",
+            "purl": "",
+            "version": "2.14.1"
+          },
+          {
+            "name": "pg-cursor",
+            "purl": "",
+            "version": "2.22.1"
+          },
+          {
+            "name": "pg-int8",
+            "purl": "",
+            "version": "1.0.1"
+          },
+          {
+            "name": "pg-pool",
+            "purl": "",
+            "version": "3.14.0"
+          },
+          {
+            "name": "pg-protocol",
+            "purl": "",
+            "version": "1.16.1"
+          },
+          {
+            "name": "pg-types",
+            "purl": "",
+            "version": "2.2.0"
+          },
+          {
+            "name": "pgpass",
+            "purl": "",
+            "version": "1.0.5"
+          },
+          {
+            "name": "pino",
+            "purl": "",
+            "version": "10.3.1"
+          },
+          {
+            "name": "pino-abstract-transport",
+            "purl": "",
+            "version": "3.0.0"
+          },
+          {
+            "name": "pino-std-serializers",
+            "purl": "",
+            "version": "7.1.0"
+          },
+          {
             "name": "pixelmatch",
             "purl": "",
             "version": "5.3.0"
@@ -1948,9 +2053,34 @@
             "version": "5.0.0"
           },
           {
+            "name": "postgres-array",
+            "purl": "",
+            "version": "2.0.0"
+          },
+          {
+            "name": "postgres-bytea",
+            "purl": "",
+            "version": "1.0.1"
+          },
+          {
+            "name": "postgres-date",
+            "purl": "",
+            "version": "1.0.7"
+          },
+          {
+            "name": "postgres-interval",
+            "purl": "",
+            "version": "1.2.0"
+          },
+          {
             "name": "process-nextick-args",
             "purl": "",
             "version": "2.0.1"
+          },
+          {
+            "name": "process-warning",
+            "purl": "",
+            "version": "5.1.1"
           },
           {
             "name": "proxy-addr",
@@ -1983,6 +2113,11 @@
             "version": "6.16.1"
           },
           {
+            "name": "quick-format-unescaped",
+            "purl": "",
+            "version": "4.0.4"
+          },
+          {
             "name": "range-parser",
             "purl": "",
             "version": "1.2.1"
@@ -2001,6 +2136,11 @@
             "name": "readdir-glob",
             "purl": "",
             "version": "1.1.3"
+          },
+          {
+            "name": "real-require",
+            "purl": "",
+            "version": "0.2.0"
           },
           {
             "name": "reflect-metadata",
@@ -2036,6 +2176,11 @@
             "name": "safe-buffer",
             "purl": "",
             "version": "5.1.2"
+          },
+          {
+            "name": "safe-stable-stringify",
+            "purl": "",
+            "version": "2.5.0"
           },
           {
             "name": "safer-buffer",
@@ -2113,9 +2258,29 @@
             "version": "1.2.7"
           },
           {
+            "name": "smart-buffer",
+            "purl": "",
+            "version": "4.2.0"
+          },
+          {
+            "name": "socks",
+            "purl": "",
+            "version": "2.8.9"
+          },
+          {
+            "name": "sonic-boom",
+            "purl": "",
+            "version": "4.2.1"
+          },
+          {
             "name": "source-map-js",
             "purl": "",
             "version": "1.2.2"
+          },
+          {
+            "name": "split2",
+            "purl": "",
+            "version": "4.2.0"
           },
           {
             "name": "statuses",
@@ -2188,6 +2353,11 @@
             "version": "1.0.2"
           },
           {
+            "name": "thread-stream",
+            "purl": "",
+            "version": "4.2.1"
+          },
+          {
             "name": "tinycolor2",
             "purl": "",
             "version": "1.6.0"
@@ -2221,6 +2391,11 @@
             "name": "tr46",
             "purl": "",
             "version": "6.0.0"
+          },
+          {
+            "name": "transport",
+            "purl": "",
+            "version": "0.0.1"
           },
           {
             "name": "tsconfig-paths",
@@ -2388,6 +2563,11 @@
             "version": "2.2.0"
           },
           {
+            "name": "xtend",
+            "purl": "",
+            "version": "4.0.2"
+          },
+          {
             "name": "y18n",
             "purl": "",
             "version": "4.0.3"
@@ -2429,12 +2609,12 @@
         "freebsd": 55,
         "go": 0,
         "java": 0,
-        "node": 403,
+        "node": 439,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 458
+        "total": 494
       }
     }
   }
